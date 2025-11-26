@@ -1,0 +1,108 @@
+.tour-section {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.carousel-container {
+    width: 100%;
+    max-width: 1250px;
+    margin: auto;
+    position: relative;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+}
+
+.tour-card {
+    min-width: 300px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.image-box {
+    position: relative;
+}
+
+.image-box img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #ff4d4d;
+    color: #fff;
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 5px;
+}
+
+h3 {
+    margin: 10px 0 5px;
+}
+
+.btn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    background: #000;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ARROWS */
+.arrow {
+    position: absolute;
+    top: 40%;
+    padding: 10px 16px;
+    background: #000;
+    color: #fff;
+   	border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+}
+
+.arrow.left {
+    left: -40px;
+}
+
+.arrow.right {
+    right: -40px;
+}
+
+/* DOTS */
+.dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background: #ddd;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #000;
+}

@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>From Dunes to Dreams — Demo</title>
+  <!-- Replace fonts if you want exact font from the reference -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assests/css/style.css">
+  <link rel="stylesheet" href="assests/css/buggy.css">
+  <link rel="stylesheet" href="assests/css/benifit.css">
+  <link rel="stylesheet" href="assests/css/instabox.css">
+  <link rel="stylesheet" href="assests/css/footer.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a class="logo" href="#">
+        <img src="https://highmotion.ae/wp-content/uploads/2023/10/logo-primary.webp" alt="Logo (replace with your file)">
+      </a>
+
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#buggy">Buggy Tours</a></li>
+          <li><a href="#safari">Safari</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="actions">
+        <a class="btn-whatsapp" href="https://wa.me/971505243777" target="_blank" rel="noopener">+971 50 524 3777 <i class="fa fa-whatsapp"></i></a>
+        <i class="fa fa-instagram"></i>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== MOBILE NAV (simple) ===== -->
+  <div id="mobileNav" style="display:none;position:fixed;inset:64px 0 auto 0;background:rgba(6,6,6,0.98);z-index:1200;padding:18px;">
+    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px">
+      <li><a href="#hero" style="color:#fff;font-weight:700">Home</a></li>
+      <li><a href="#buggy" style="color:#fff;font-weight:700">Buggy Tours</a></li>
+      <li><a href="#safari" style="color:#fff;font-weight:700">Safari</a></li>
+      <li><a href="#gallery" style="color:#fff;font-weight:700">Gallery</a></li>
+      <li><a href="#contact" style="color:#fff;font-weight:700">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ===== HERO (video bg) =====
+       Put files in /assets:
+         - assets/hero-video.mp4   (mp4 h264)
+         - assets/hero-poster.jpg  (poster fallback)
+  -->
+  <section id="hero" class="hero" aria-label="Hero">
+    <video class="bg-video" autoplay muted loop playsinline poster="https://highmotion.ae/wp-content/uploads/2023/11/homepage-video-fallback.jpg">
+      <source src="assets/hero-video.mp4" type="video/mp4">
+      <!-- if video fails browser will show poster -->
+    </video>
+    <div class="overlay" aria-hidden="true"></div>
+
+    <div class="content">
+      <div class="eyebrow">Safari and Buggy Tours in Dubai</div>
+      <h1>From Dunes to Dreams</h1>
+      <p class="lead">Buggy thrills, safari chills, and camping under Dubai skies.</p>
+      <!-- <div class="cta">
+        <a class="btn-primary" href="#contact">Book Now</a>
+        <a class="btn-ghost" href="#gallery">View Gallery</a>
+      </div> -->
+    </div>
+
+    <!-- wave (SVG) -->
+    <div class="hero-wave" aria-hidden="true" style="position:absolute;left:0;right:0;bottom:-1px;z-index:2">
+      <svg viewBox="0 0 1440 140" preserveAspectRatio="none" style="width:100%;height:140px;display:block">
+        <path d="M0,40 C200,120 400,0 720,42 C1040,84 1240,20 1440,72 L1440 140 L0 140 Z" fill="#fff"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== Overlapping cards under hero ===== -->
+  <div class="cards-row" style="position:relative">
+    <!-- <div class="accent-thumb" aria-hidden="true">
+      <img src="https://highmotion.ae/wp-content/uploads/2023/10/page-bg.png" alt="accent">
+    </div> -->
+
+    <article class="card" style="max-width:700px">
+      <img src="https://highmotion.ae/wp-content/uploads/2023/11/safari-banner.png" alt="Camel ride">
+      <div class="card-body">
+        <h3>Camel Ride & Cultural Photo</h3>
+        <p>Enjoy a relaxed camel ride and capture iconic desert portraits.</p>
+        <a class="btn-ghost" href="#safari">Learn more</a>
+      </div>
+    </article>
+
+    <article class="card" style="max-width:700px">
+      <img src="https://highmotion.ae/wp-content/uploads/2023/11/buggy-tours-banner.png" alt="Buggy action">
+      <div class="card-body">
+        <h3>Buggy Action</h3>
+        <p>Powerful buggies and professional guides for an adrenaline-packed ride.</p>
+        <a class="btn-ghost" href="#buggy">Explore buggies</a>
+      </div>
+    </article>
+  </div>
+
+  <!-- ===== Buggy Section ===== -->
+ <section class="tour-section">
+    <h2 class="section-title">Explore Popular Tour Choices</h2>
+
+    <div class="carousel-container">
+
+        <button class="arrow left" id="prevBtn">&#10094;</button>
+
+        <div class="carousel-wrapper">
+            <div class="carousel-track">
+
+                <!-- CARD 1 -->
+                <div class="tour-card">
+                    <div class="image-box">
+                        <img src="https://highmotion.ae/wp-content/uploads/2023/11/Buggy-tour-Can-Am-2seater-1.jpg" alt="">
+                        <span class="tag">Popular</span>
+                    </div>
+                    <h3>Safari Tour</h3>
+                    <p>8 hrs tour • BBQ Dinner • Free pickup/drop-off</p>
+                    <h4>199 AED</h4>
+                    <button class="btn">Select options</button>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="tour-card">
+                    <div class="image-box">
+                        <img src="https://highmotion.ae/wp-content/uploads/2023/11/Morning-quads-tour.jpg" alt="">
+                        <span class="tag">Popular</span>
+                    </div>
+                    <h3>Combo Package: Safari + Quad</h3>
+                    <p>Full package • Free pickup/dropoff</p>
+                    <h4>349 AED</h4>
+                    <button class="btn">Select options</button>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="tour-card">
+                    <div class="image-box">
+                        <img src="https://highmotion.ae/wp-content/uploads/2023/11/Titul-Morning-quad-Polaris-tour01.jpg" alt="">
+                        <span class="tag">Popular</span>
+                    </div>
+                    <h3>Can Am Maverick X3 Turbo RR 2-seater</h3>
+                    <p>60 min • 6 AM - 4 PM</p>
+                    <h4>1,250 AED</h4>
+                    <button class="btn">Select options</button>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="tour-card">
+                    <div class="image-box">
+                        <img src="https://highmotion.ae/wp-content/uploads/2023/11/Morning-quads-tour.jpg" alt="">
+                        <span class="tag">Popular</span>
+                    </div>
+                    <h3>Quad Bike Tour</h3>
+                    <p>Morning • Evening • Free Pickup</p>
+                    <h4>299 AED</h4>
+                    <button class="btn">Select options</button>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="tour-card">
+                    <div class="image-box">
+                        <img src="https://highmotion.ae/wp-content/uploads/2023/11/Morning-quads-tour.jpg" alt="">
+                        <span class="tag">Popular</span>
+                    </div>
+                    <h3>Quad Bike Tour</h3>
+                    <p>Morning • Evening • Free Pickup</p>
+                    <h4>299 AED</h4>
+                    <button class="btn">Select options</button>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="tour-card">
+                    <div class="image-box">
+                        <img src="https://highmotion.ae/wp-content/uploads/2023/11/Morning-quads-tour.jpg" alt="">
+                        <span class="tag">Popular</span>
+                    </div>
+                    <h3>Quad Bike Tour</h3>
+                    <p>Morning • Evening • Free Pickup</p>
+                    <h4>299 AED</h4>
+                    <button class="btn">Select options</button>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="tour-card">
+                    <div class="image-box">
+                        <img src="https://highmotion.ae/wp-content/uploads/2023/11/Morning-quads-tour.jpg" alt="">
+                        <span class="tag">Popular</span>
+                    </div>
+                    <h3>Quad Bike Tour</h3>
+                    <p>Morning • Evening • Free Pickup</p>
+                    <h4>299 AED</h4>
+                    <button class="btn">Select options</button>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="tour-card">
+                    <div class="image-box">
+                        <img src="https://highmotion.ae/wp-content/uploads/2023/11/Morning-quads-tour.jpg" alt="">
+                        <span class="tag">Popular</span>
+                    </div>
+                    <h3>Quad Bike Tour</h3>
+                    <p>Morning • Evening • Free Pickup</p>
+                    <h4>299 AED</h4>
+                    <button class="btn">Select options</button>
+                </div>
+
+            </div>
+        </div>
+
+        <button class="arrow right" id="nextBtn">&#10095;</button>
+    </div>
+
+    <div class="dots">
+        <span class="dot active" data-slide="0"></span>
+        <span class="dot" data-slide="1"></span>
+        <span class="dot" data-slide="2"></span>
+    </div>
+</section>
+
+  <!-- ===== Gallery ===== -->
+  <!-- <section id="gallery" class="section" style="background:#fbfbfd">
+    <div class="container">
+      <h2 class="center">Gallery</h2>
+      <p class="center" style="color:#6b7280;margin-top:6px">Click any image to enlarge.</p>
+
+      <div class="gallery-grid" style="margin-top:18px">
+        <figure class="gallery-item"><img src="assets/gallery1.jpg" alt="Camel ride"></figure>
+        <figure class="gallery-item"><img src="assets/gallery2.jpg" alt="Dune bashing"></figure>
+        <figure class="gallery-item"><img src="assets/gallery3.jpg" alt="Sunset"></figure>
+        <figure class="gallery-item"><img src="assets/gallery4.jpg" alt="Camping"></figure>
+        <figure class="gallery-item"><img src="assets/gallery5.jpg" alt="BBQ"></figure>
+        <figure class="gallery-item"><img src="assets/gallery6.jpg" alt="Buggy action"></figure>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- ===== Testimonials ===== -->
+  <!-- <section id="testimonials" class="section">
+    <div class="container center">
+      <h2>Testimonials</h2>
+      <div class="testi-wrap" style="margin-top:18px">
+        <div class="testi active"><p style="font-size:18px">“Amazing experience, dune bashing was thrilling.”</p><p style="opacity:.7;margin-top:8px">— Maya</p></div>
+        <div class="testi"><p style="font-size:18px">“Great guides and excellent service.”</p><p style="opacity:.7;margin-top:8px">— Ahmed</p></div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- ===== Contact / Booking ===== -->
+  <section class="benefits-section">
+    <div class="benefits-bg"></div>
+
+    <div class="benefits-content">
+        <p class="subtitle">OUR BENEFITS</p>
+        <h2 class="title">Discover the Advantages of Our Dubai<br>Buggy Safaris</h2>
+    </div>
+
+    <div class="benefits-cards">
+
+        <!-- Card 1 -->
+        <div class="benefit-card">
+            <div class="icoon">
+            <h3>Experience</h3>
+            <span class="elementor-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" fill="none"><path d="M33.8827 20.1832C33.7792 19.8651 33.5041 19.6333 33.173 19.5852L26.3424 18.5945L23.286 12.406C23.1379 12.1061 22.8325 11.9163 22.4979 11.9163H22.4977C22.1631 11.9163 21.8577 12.1064 21.7097 12.4064L18.6567 18.5966L11.8266 19.5909C11.4956 19.6391 11.2205 19.8711 11.1172 20.1893C11.0139 20.5076 11.1001 20.8568 11.3398 21.0903L16.2837 25.9068L15.1187 32.7099C15.0622 33.0396 15.1978 33.3729 15.4685 33.5694C15.6216 33.6805 15.8028 33.7371 15.985 33.7371C16.125 33.7371 16.2655 33.7037 16.3941 33.636L22.5026 30.4225L28.6128 33.6327C28.909 33.7882 29.2677 33.7622 29.5384 33.5655C29.8091 33.3688 29.9446 33.0355 29.8879 32.7058L28.7193 25.9033L33.6606 21.0843C33.9 20.8507 33.9861 20.5014 33.8827 20.1832ZM27.1612 24.9676C26.9542 25.1695 26.8596 25.4605 26.9086 25.7456L27.854 31.2484L22.9113 28.6515C22.6553 28.517 22.3494 28.5171 22.0932 28.6517L17.1518 31.2512L18.0943 25.7479C18.1432 25.4627 18.0485 25.1719 17.8413 24.97L13.8421 21.0738L19.3672 20.2695C19.6535 20.2279 19.9009 20.048 20.0288 19.7885L22.4985 14.781L24.9709 19.7871C25.099 20.0465 25.3465 20.2262 25.6327 20.2678L31.1583 21.0693L27.1612 24.9676Z" fill="#30A53E"></path><path d="M12.2617 26.3851C12.1581 26.0669 11.8831 25.835 11.5521 25.7871L8.36532 25.3249L6.93938 22.4377C6.79129 22.1378 6.48587 21.948 6.15136 21.948H6.15109C5.81658 21.9481 5.51108 22.1381 5.36307 22.4382L3.93872 25.326L0.752334 25.7899C0.421339 25.838 0.14633 26.0701 0.0429704 26.3882C-0.0603008 26.7065 0.0259197 27.0558 0.265597 27.2892L2.57211 29.5362L2.02859 32.7101C1.97208 33.0398 2.10769 33.3731 2.3784 33.5696C2.5315 33.6807 2.71273 33.7373 2.89493 33.7373C3.03494 33.7373 3.17539 33.7039 3.30397 33.6364L6.15382 32.1371L9.00437 33.6347C9.30056 33.7903 9.65942 33.7643 9.92994 33.5676C10.2006 33.3709 10.3361 33.0376 10.2794 32.7078L9.7343 29.5343L12.0396 27.2861C12.279 27.0525 12.3651 26.7032 12.2617 26.3851ZM8.17609 28.5985C7.96911 28.8005 7.87454 29.0915 7.92358 29.3766L8.24544 31.2503L6.56242 30.3661C6.3064 30.2316 6.00045 30.2318 5.74442 30.3662L4.06176 31.2515L4.38265 29.3774C4.43152 29.0922 4.33686 28.8013 4.1297 28.5995L2.76793 27.2728L4.64931 26.9989C4.93557 26.9572 5.18298 26.7773 5.31095 26.5179L6.15189 24.8128L6.99379 26.5175C7.12184 26.7769 7.36934 26.9566 7.6556 26.9982L9.53716 27.271L8.17609 28.5985Z" fill="#30A53E"></path><path d="M44.9571 26.388C44.8539 26.0698 44.5789 25.8378 44.2478 25.7896L41.0614 25.3257L39.637 22.4379C39.489 22.1379 39.1835 21.9478 38.849 21.9478H38.8488C38.5142 21.9478 38.2088 22.1376 38.0607 22.4375L36.6348 25.3247L33.4481 25.7868C33.1171 25.8348 32.842 26.0667 32.7384 26.3848C32.635 26.703 32.721 27.0523 32.9605 27.2859L35.2658 29.5341L34.7207 32.7076C34.6641 33.0373 34.7995 33.3705 35.0702 33.5673C35.3408 33.7641 35.6995 33.7901 35.9957 33.6345L38.8463 32.1369L41.6961 33.6361C41.8247 33.7037 41.9652 33.7371 42.1052 33.7371C42.2873 33.7371 42.4686 33.6806 42.6218 33.5692C42.8925 33.3727 43.0281 33.0394 42.9716 32.7098L42.4281 29.5359L44.7345 27.2889C44.9741 27.0555 45.0604 26.7062 44.9571 26.388ZM40.8705 28.5992C40.6633 28.8011 40.5687 29.092 40.6175 29.3771L40.9384 31.2512L39.2557 30.366C39.1276 30.2987 38.9872 30.265 38.8466 30.265C38.7061 30.265 38.5657 30.2987 38.4379 30.3658L36.7548 31.2501L37.0767 29.3763C37.1257 29.0911 37.0312 28.8002 36.8242 28.5982L35.4631 27.2708L37.3447 26.9979C37.6309 26.9564 37.8784 26.7766 38.0065 26.5173L38.8484 24.8125L39.6893 26.5176C39.8173 26.7771 40.0647 26.957 40.351 26.9986L42.2323 27.2725L40.8705 28.5992Z" fill="#30A53E"></path><path d="M34.3715 10.9551C34.0281 10.612 33.4718 10.612 33.1285 10.9551L30.2281 13.8555C29.8849 14.1988 29.8849 14.7553 30.2281 15.0985C30.3998 15.2701 30.6246 15.3559 30.8496 15.3559C31.0746 15.3559 31.2995 15.2702 31.4711 15.0985L34.3715 12.1981C34.7147 11.8548 34.7147 11.2983 34.3715 10.9551Z" fill="#30A53E"></path><path d="M36.4484 8.87861C36.2841 8.71505 36.0582 8.62109 35.8262 8.62109C35.595 8.62109 35.3683 8.71514 35.2048 8.87861C35.0412 9.04209 34.9473 9.26885 34.9473 9.5C34.9473 9.73194 35.0413 9.95791 35.2048 10.1213C35.3683 10.2857 35.595 10.3789 35.8262 10.3789C36.0581 10.3789 36.2841 10.2857 36.4484 10.1213C36.6118 9.95791 36.7051 9.73203 36.7051 9.5C36.7051 9.26885 36.6118 9.04209 36.4484 8.87861Z" fill="#30A53E"></path><path d="M9.7956 8.87861C9.63125 8.71505 9.40537 8.62109 9.17334 8.62109C8.94219 8.62109 8.71631 8.71514 8.55195 8.87861C8.38839 9.04209 8.29443 9.26885 8.29443 9.5C8.29443 9.73194 8.38848 9.95791 8.55195 10.1213C8.71631 10.2857 8.94307 10.3789 9.17334 10.3789C9.4044 10.3789 9.63125 10.2857 9.7956 10.1213C9.95908 9.95791 10.0531 9.73115 10.0531 9.5C10.0531 9.26885 9.95899 9.04209 9.7956 8.87861Z" fill="#30A53E"></path><path d="M14.6535 13.7372L11.8715 10.9553C11.5281 10.6122 10.9718 10.6122 10.6285 10.9553C10.2853 11.2986 10.2853 11.8552 10.6285 12.1984L13.4105 14.9803C13.5821 15.1518 13.807 15.2377 14.032 15.2377C14.2569 15.2377 14.4818 15.1518 14.6535 14.9803C14.9967 14.637 14.9967 14.0805 14.6535 13.7372Z" fill="#30A53E"></path><path d="M22.5 2.2627C22.0147 2.2627 21.6211 2.65627 21.6211 3.1416V9.10672C21.6211 9.59206 22.0147 9.98563 22.5 9.98563C22.9854 9.98563 23.3789 9.59206 23.3789 9.10672V3.1416C23.3789 2.65627 22.9853 2.2627 22.5 2.2627Z" fill="#30A53E"></path></svg>				</span>
+            </div>
+        <p>
+                With 15 years of experience in tourism, our team knows Dubai's deserts like their own hands.
+                We craft unique adventures for all types of travelers.
+            </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="benefit-card">
+            <div class="icoon">
+            <h3>Safety First</h3>
+            <span class="elementor-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" fill="none"><path d="M33.8827 20.1832C33.7792 19.8651 33.5041 19.6333 33.173 19.5852L26.3424 18.5945L23.286 12.406C23.1379 12.1061 22.8325 11.9163 22.4979 11.9163H22.4977C22.1631 11.9163 21.8577 12.1064 21.7097 12.4064L18.6567 18.5966L11.8266 19.5909C11.4956 19.6391 11.2205 19.8711 11.1172 20.1893C11.0139 20.5076 11.1001 20.8568 11.3398 21.0903L16.2837 25.9068L15.1187 32.7099C15.0622 33.0396 15.1978 33.3729 15.4685 33.5694C15.6216 33.6805 15.8028 33.7371 15.985 33.7371C16.125 33.7371 16.2655 33.7037 16.3941 33.636L22.5026 30.4225L28.6128 33.6327C28.909 33.7882 29.2677 33.7622 29.5384 33.5655C29.8091 33.3688 29.9446 33.0355 29.8879 32.7058L28.7193 25.9033L33.6606 21.0843C33.9 20.8507 33.9861 20.5014 33.8827 20.1832ZM27.1612 24.9676C26.9542 25.1695 26.8596 25.4605 26.9086 25.7456L27.854 31.2484L22.9113 28.6515C22.6553 28.517 22.3494 28.5171 22.0932 28.6517L17.1518 31.2512L18.0943 25.7479C18.1432 25.4627 18.0485 25.1719 17.8413 24.97L13.8421 21.0738L19.3672 20.2695C19.6535 20.2279 19.9009 20.048 20.0288 19.7885L22.4985 14.781L24.9709 19.7871C25.099 20.0465 25.3465 20.2262 25.6327 20.2678L31.1583 21.0693L27.1612 24.9676Z" fill="#30A53E"></path><path d="M12.2617 26.3851C12.1581 26.0669 11.8831 25.835 11.5521 25.7871L8.36532 25.3249L6.93938 22.4377C6.79129 22.1378 6.48587 21.948 6.15136 21.948H6.15109C5.81658 21.9481 5.51108 22.1381 5.36307 22.4382L3.93872 25.326L0.752334 25.7899C0.421339 25.838 0.14633 26.0701 0.0429704 26.3882C-0.0603008 26.7065 0.0259197 27.0558 0.265597 27.2892L2.57211 29.5362L2.02859 32.7101C1.97208 33.0398 2.10769 33.3731 2.3784 33.5696C2.5315 33.6807 2.71273 33.7373 2.89493 33.7373C3.03494 33.7373 3.17539 33.7039 3.30397 33.6364L6.15382 32.1371L9.00437 33.6347C9.30056 33.7903 9.65942 33.7643 9.92994 33.5676C10.2006 33.3709 10.3361 33.0376 10.2794 32.7078L9.7343 29.5343L12.0396 27.2861C12.279 27.0525 12.3651 26.7032 12.2617 26.3851ZM8.17609 28.5985C7.96911 28.8005 7.87454 29.0915 7.92358 29.3766L8.24544 31.2503L6.56242 30.3661C6.3064 30.2316 6.00045 30.2318 5.74442 30.3662L4.06176 31.2515L4.38265 29.3774C4.43152 29.0922 4.33686 28.8013 4.1297 28.5995L2.76793 27.2728L4.64931 26.9989C4.93557 26.9572 5.18298 26.7773 5.31095 26.5179L6.15189 24.8128L6.99379 26.5175C7.12184 26.7769 7.36934 26.9566 7.6556 26.9982L9.53716 27.271L8.17609 28.5985Z" fill="#30A53E"></path><path d="M44.9571 26.388C44.8539 26.0698 44.5789 25.8378 44.2478 25.7896L41.0614 25.3257L39.637 22.4379C39.489 22.1379 39.1835 21.9478 38.849 21.9478H38.8488C38.5142 21.9478 38.2088 22.1376 38.0607 22.4375L36.6348 25.3247L33.4481 25.7868C33.1171 25.8348 32.842 26.0667 32.7384 26.3848C32.635 26.703 32.721 27.0523 32.9605 27.2859L35.2658 29.5341L34.7207 32.7076C34.6641 33.0373 34.7995 33.3705 35.0702 33.5673C35.3408 33.7641 35.6995 33.7901 35.9957 33.6345L38.8463 32.1369L41.6961 33.6361C41.8247 33.7037 41.9652 33.7371 42.1052 33.7371C42.2873 33.7371 42.4686 33.6806 42.6218 33.5692C42.8925 33.3727 43.0281 33.0394 42.9716 32.7098L42.4281 29.5359L44.7345 27.2889C44.9741 27.0555 45.0604 26.7062 44.9571 26.388ZM40.8705 28.5992C40.6633 28.8011 40.5687 29.092 40.6175 29.3771L40.9384 31.2512L39.2557 30.366C39.1276 30.2987 38.9872 30.265 38.8466 30.265C38.7061 30.265 38.5657 30.2987 38.4379 30.3658L36.7548 31.2501L37.0767 29.3763C37.1257 29.0911 37.0312 28.8002 36.8242 28.5982L35.4631 27.2708L37.3447 26.9979C37.6309 26.9564 37.8784 26.7766 38.0065 26.5173L38.8484 24.8125L39.6893 26.5176C39.8173 26.7771 40.0647 26.957 40.351 26.9986L42.2323 27.2725L40.8705 28.5992Z" fill="#30A53E"></path><path d="M34.3715 10.9551C34.0281 10.612 33.4718 10.612 33.1285 10.9551L30.2281 13.8555C29.8849 14.1988 29.8849 14.7553 30.2281 15.0985C30.3998 15.2701 30.6246 15.3559 30.8496 15.3559C31.0746 15.3559 31.2995 15.2702 31.4711 15.0985L34.3715 12.1981C34.7147 11.8548 34.7147 11.2983 34.3715 10.9551Z" fill="#30A53E"></path><path d="M36.4484 8.87861C36.2841 8.71505 36.0582 8.62109 35.8262 8.62109C35.595 8.62109 35.3683 8.71514 35.2048 8.87861C35.0412 9.04209 34.9473 9.26885 34.9473 9.5C34.9473 9.73194 35.0413 9.95791 35.2048 10.1213C35.3683 10.2857 35.595 10.3789 35.8262 10.3789C36.0581 10.3789 36.2841 10.2857 36.4484 10.1213C36.6118 9.95791 36.7051 9.73203 36.7051 9.5C36.7051 9.26885 36.6118 9.04209 36.4484 8.87861Z" fill="#30A53E"></path><path d="M9.7956 8.87861C9.63125 8.71505 9.40537 8.62109 9.17334 8.62109C8.94219 8.62109 8.71631 8.71514 8.55195 8.87861C8.38839 9.04209 8.29443 9.26885 8.29443 9.5C8.29443 9.73194 8.38848 9.95791 8.55195 10.1213C8.71631 10.2857 8.94307 10.3789 9.17334 10.3789C9.4044 10.3789 9.63125 10.2857 9.7956 10.1213C9.95908 9.95791 10.0531 9.73115 10.0531 9.5C10.0531 9.26885 9.95899 9.04209 9.7956 8.87861Z" fill="#30A53E"></path><path d="M14.6535 13.7372L11.8715 10.9553C11.5281 10.6122 10.9718 10.6122 10.6285 10.9553C10.2853 11.2986 10.2853 11.8552 10.6285 12.1984L13.4105 14.9803C13.5821 15.1518 13.807 15.2377 14.032 15.2377C14.2569 15.2377 14.4818 15.1518 14.6535 14.9803C14.9967 14.637 14.9967 14.0805 14.6535 13.7372Z" fill="#30A53E"></path><path d="M22.5 2.2627C22.0147 2.2627 21.6211 2.65627 21.6211 3.1416V9.10672C21.6211 9.59206 22.0147 9.98563 22.5 9.98563C22.9854 9.98563 23.3789 9.59206 23.3789 9.10672V3.1416C23.3789 2.65627 22.9853 2.2627 22.5 2.2627Z" fill="#30A53E"></path></svg>				</span>
+            </div>
+            <p>
+                Your safety is our top priority. We follow strict safety standards and provide premium
+                equipment for worry-free adventures.
+            </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="benefit-card">
+            <div class="icoon">
+            <h3>Rave Review</h3>
+            <span class="elementor-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" fill="none"><path d="M33.8827 20.1832C33.7792 19.8651 33.5041 19.6333 33.173 19.5852L26.3424 18.5945L23.286 12.406C23.1379 12.1061 22.8325 11.9163 22.4979 11.9163H22.4977C22.1631 11.9163 21.8577 12.1064 21.7097 12.4064L18.6567 18.5966L11.8266 19.5909C11.4956 19.6391 11.2205 19.8711 11.1172 20.1893C11.0139 20.5076 11.1001 20.8568 11.3398 21.0903L16.2837 25.9068L15.1187 32.7099C15.0622 33.0396 15.1978 33.3729 15.4685 33.5694C15.6216 33.6805 15.8028 33.7371 15.985 33.7371C16.125 33.7371 16.2655 33.7037 16.3941 33.636L22.5026 30.4225L28.6128 33.6327C28.909 33.7882 29.2677 33.7622 29.5384 33.5655C29.8091 33.3688 29.9446 33.0355 29.8879 32.7058L28.7193 25.9033L33.6606 21.0843C33.9 20.8507 33.9861 20.5014 33.8827 20.1832ZM27.1612 24.9676C26.9542 25.1695 26.8596 25.4605 26.9086 25.7456L27.854 31.2484L22.9113 28.6515C22.6553 28.517 22.3494 28.5171 22.0932 28.6517L17.1518 31.2512L18.0943 25.7479C18.1432 25.4627 18.0485 25.1719 17.8413 24.97L13.8421 21.0738L19.3672 20.2695C19.6535 20.2279 19.9009 20.048 20.0288 19.7885L22.4985 14.781L24.9709 19.7871C25.099 20.0465 25.3465 20.2262 25.6327 20.2678L31.1583 21.0693L27.1612 24.9676Z" fill="#30A53E"></path><path d="M12.2617 26.3851C12.1581 26.0669 11.8831 25.835 11.5521 25.7871L8.36532 25.3249L6.93938 22.4377C6.79129 22.1378 6.48587 21.948 6.15136 21.948H6.15109C5.81658 21.9481 5.51108 22.1381 5.36307 22.4382L3.93872 25.326L0.752334 25.7899C0.421339 25.838 0.14633 26.0701 0.0429704 26.3882C-0.0603008 26.7065 0.0259197 27.0558 0.265597 27.2892L2.57211 29.5362L2.02859 32.7101C1.97208 33.0398 2.10769 33.3731 2.3784 33.5696C2.5315 33.6807 2.71273 33.7373 2.89493 33.7373C3.03494 33.7373 3.17539 33.7039 3.30397 33.6364L6.15382 32.1371L9.00437 33.6347C9.30056 33.7903 9.65942 33.7643 9.92994 33.5676C10.2006 33.3709 10.3361 33.0376 10.2794 32.7078L9.7343 29.5343L12.0396 27.2861C12.279 27.0525 12.3651 26.7032 12.2617 26.3851ZM8.17609 28.5985C7.96911 28.8005 7.87454 29.0915 7.92358 29.3766L8.24544 31.2503L6.56242 30.3661C6.3064 30.2316 6.00045 30.2318 5.74442 30.3662L4.06176 31.2515L4.38265 29.3774C4.43152 29.0922 4.33686 28.8013 4.1297 28.5995L2.76793 27.2728L4.64931 26.9989C4.93557 26.9572 5.18298 26.7773 5.31095 26.5179L6.15189 24.8128L6.99379 26.5175C7.12184 26.7769 7.36934 26.9566 7.6556 26.9982L9.53716 27.271L8.17609 28.5985Z" fill="#30A53E"></path><path d="M44.9571 26.388C44.8539 26.0698 44.5789 25.8378 44.2478 25.7896L41.0614 25.3257L39.637 22.4379C39.489 22.1379 39.1835 21.9478 38.849 21.9478H38.8488C38.5142 21.9478 38.2088 22.1376 38.0607 22.4375L36.6348 25.3247L33.4481 25.7868C33.1171 25.8348 32.842 26.0667 32.7384 26.3848C32.635 26.703 32.721 27.0523 32.9605 27.2859L35.2658 29.5341L34.7207 32.7076C34.6641 33.0373 34.7995 33.3705 35.0702 33.5673C35.3408 33.7641 35.6995 33.7901 35.9957 33.6345L38.8463 32.1369L41.6961 33.6361C41.8247 33.7037 41.9652 33.7371 42.1052 33.7371C42.2873 33.7371 42.4686 33.6806 42.6218 33.5692C42.8925 33.3727 43.0281 33.0394 42.9716 32.7098L42.4281 29.5359L44.7345 27.2889C44.9741 27.0555 45.0604 26.7062 44.9571 26.388ZM40.8705 28.5992C40.6633 28.8011 40.5687 29.092 40.6175 29.3771L40.9384 31.2512L39.2557 30.366C39.1276 30.2987 38.9872 30.265 38.8466 30.265C38.7061 30.265 38.5657 30.2987 38.4379 30.3658L36.7548 31.2501L37.0767 29.3763C37.1257 29.0911 37.0312 28.8002 36.8242 28.5982L35.4631 27.2708L37.3447 26.9979C37.6309 26.9564 37.8784 26.7766 38.0065 26.5173L38.8484 24.8125L39.6893 26.5176C39.8173 26.7771 40.0647 26.957 40.351 26.9986L42.2323 27.2725L40.8705 28.5992Z" fill="#30A53E"></path><path d="M34.3715 10.9551C34.0281 10.612 33.4718 10.612 33.1285 10.9551L30.2281 13.8555C29.8849 14.1988 29.8849 14.7553 30.2281 15.0985C30.3998 15.2701 30.6246 15.3559 30.8496 15.3559C31.0746 15.3559 31.2995 15.2702 31.4711 15.0985L34.3715 12.1981C34.7147 11.8548 34.7147 11.2983 34.3715 10.9551Z" fill="#30A53E"></path><path d="M36.4484 8.87861C36.2841 8.71505 36.0582 8.62109 35.8262 8.62109C35.595 8.62109 35.3683 8.71514 35.2048 8.87861C35.0412 9.04209 34.9473 9.26885 34.9473 9.5C34.9473 9.73194 35.0413 9.95791 35.2048 10.1213C35.3683 10.2857 35.595 10.3789 35.8262 10.3789C36.0581 10.3789 36.2841 10.2857 36.4484 10.1213C36.6118 9.95791 36.7051 9.73203 36.7051 9.5C36.7051 9.26885 36.6118 9.04209 36.4484 8.87861Z" fill="#30A53E"></path><path d="M9.7956 8.87861C9.63125 8.71505 9.40537 8.62109 9.17334 8.62109C8.94219 8.62109 8.71631 8.71514 8.55195 8.87861C8.38839 9.04209 8.29443 9.26885 8.29443 9.5C8.29443 9.73194 8.38848 9.95791 8.55195 10.1213C8.71631 10.2857 8.94307 10.3789 9.17334 10.3789C9.4044 10.3789 9.63125 10.2857 9.7956 10.1213C9.95908 9.95791 10.0531 9.73115 10.0531 9.5C10.0531 9.26885 9.95899 9.04209 9.7956 8.87861Z" fill="#30A53E"></path><path d="M14.6535 13.7372L11.8715 10.9553C11.5281 10.6122 10.9718 10.6122 10.6285 10.9553C10.2853 11.2986 10.2853 11.8552 10.6285 12.1984L13.4105 14.9803C13.5821 15.1518 13.807 15.2377 14.032 15.2377C14.2569 15.2377 14.4818 15.1518 14.6535 14.9803C14.9967 14.637 14.9967 14.0805 14.6535 13.7372Z" fill="#30A53E"></path><path d="M22.5 2.2627C22.0147 2.2627 21.6211 2.65627 21.6211 3.1416V9.10672C21.6211 9.59206 22.0147 9.98563 22.5 9.98563C22.9854 9.98563 23.3789 9.59206 23.3789 9.10672V3.1416C23.3789 2.65627 22.9853 2.2627 22.5 2.2627Z" fill="#30A53E"></path></svg>				</span>
+            </div>
+            <p>
+                Don't just trust our words. Read glowing reviews from satisfied customers who shared their
+                incredible experiences.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!--======same two=====-->
+
+<section class="instagram-section">
+    <div class="insta-box">
+        <div class="insta-left">
+            <i class="fa fa-instagram"></i>
+            <span>Follow us on Instagram</span>
+        </div>
+
+        <div class="insta-right">
+            <span>safari.dubai.desert</span>
+            <img src="https://highmotion.ae/wp-content/uploads/2023/10/instagram-profile-img.webp" alt="HM Logo">
+        </div>
+    </div>
+</section>
+
+<section class="faq-section">
+    <div class="faq-left">
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know before booking our services.</p>
+    </div>
+
+    <div class="faq-right">
+        <div class="faq-item">
+            <div class="faq-question">What types of Safari and Buggy tours do you offer in Dubai?</div>
+            <div class="faq-answer">We offer a variety of desert buggy and safari packages including morning, evening, private, and adventure tours.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How do I make a reservation for a Safari or Buggy tour?</div>
+            <div class="faq-answer">You can book directly online or contact our team on WhatsApp or phone for quick booking.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What is included in the Safari and Buggy tour packages?</div>
+            <div class="faq-answer">Packages usually include hotel pickup, safety gear, refreshments, and guided rides.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Are there age restrictions for participating in the tours?</div>
+            <div class="faq-answer">Yes, participants must meet the minimum age requirement depending on the chosen tour.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What should I wear for the Safari and Buggy tours?</div>
+            <div class="faq-answer">Wear comfortable clothes, closed shoes, and avoid loose accessories for safety.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How long do the Safari and Buggy tours last?</div>
+            <div class="faq-answer">The tours typically range from 1 hour to 4 hours depending on the package.</div>
+        </div>
+    </div>
+</section>
+
+
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+
+        <!-- Left Column -->
+        <div class="footer-left">
+            <img src="https://highmotion.ae/wp-content/uploads/2023/10/footer-logo.webp" class="footer-logo">
+
+            <h3>High Motion Tourism LLC®</h3>
+            <p>Dubai Desert Safari by High Motion. Tour Agency with 15 years of experience.</p>
+
+            <p class="contact">+971 50 524 3777</p>
+            <p class="contact">info@highmotion.ae</p>
+
+            
+        </div>
+
+        <!-- Middle Column -->
+        <div class="footer-column">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Safari</a></li>
+                <li><a href="#">Buggy</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Booking Policy</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Right Column -->
+        <div class="footer-column">
+            <h4>Buggy Tours in Dubai</h4>
+            <ul>
+                <li><a href="#">Can Am Maverick X3 4-seater</a></li>
+                <li><a href="#">Can Am Maverick X3 Turbo RR 2-seater</a></li>
+                <li><a href="#">Evening Quad Tour</a></li>
+                <li><a href="#">Morning Quad Tour</a></li>
+                <li><a href="#">Two Hours Buggy Tour</a></li>
+                <li><a href="#">Morning Polaris Quad Tour</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Safari in Dubai</h4>
+            <ul>
+                <li><a href="#">Safari Tour</a></li>
+                <li><a href="#">Safari Tour with Private car</a></li>
+                <li><a href="#">Short Safari Tour</a></li>
+                <li><a href="#">Morning Safari Tour</a></li>
+                <li><a href="#">Combo Package: Safari + Quad</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="social-icons">
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-facebook-f"></i>
+                <i class="fa fa-google"></i>
+                <i class="fa fa-youtube-play"></i>
+            </div>
+        <p>2025 © High Motion Tourism LLC</p>
+        <p>Designed by Markmans</p>
+    </div>
+</footer>
+
+
+
+
+
+ <script src="assests/js/script.js"></script> 
+ <script src="assests/js/buggy.js"></script>
+ <script src="assests/js/faq.js"></script>
+</body>
+</html>
